@@ -22,13 +22,6 @@ export const CheckIn = () => {
     console.log("");
   }
 
-  const mapPressHandler = (coordinates) => {
-    Alert.alert(
-      "Map press",
-      `You pressed at position ${coordinates[0]}/${coordinates[1]}`
-    );
-  };
-
   return (
     <View style={styles.container}>
       <Text style={styles.textTitle}>
@@ -38,7 +31,6 @@ export const CheckIn = () => {
         onInitialized={(zoomToGeoJSON) =>
           (zoomToGeoJSONFuncRef.current = zoomToGeoJSON)
         }
-        onMapPress={mapPressHandler}
       />
       <View style={styles.wrapper}>
         <ButtonPrimary onPress={addCheckIn} title={"Realizar Check-In"} />
